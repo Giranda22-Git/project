@@ -1,15 +1,16 @@
-'use strict'
 
-document.body.addEventListener( 'load', function(){
+window.onload = function(){
     let
-        modal = document.querySelector('#modal'),
-        actionList = document.querySelectorAll('#action_list')    
+        modal = document.querySelector('#modal-body'),
+        modal_close = document.querySelector('#modal-close'),
+        actionList = document.querySelectorAll('#action_list')  
     ;
-
+    console.log(actionList);
     for(let i = 0; i < actionList.length; i++){
         actionList[i].addEventListener('click', function(){
-            modal.classList.remove('display_block');  
-            console.log('jhjhj');         
+            modal.classList.remove('display_none');
+            modal.classList.add('display_flex');
+            modal_close.classList.remove('display_none');
         })
     }
-})
+}

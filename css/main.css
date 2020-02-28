@@ -114,23 +114,74 @@ header{
     border-radius: 5px;
     mix-blend-mode: multiply;
     padding: 5px 10px;
+    cursor: pointer;
 }
 
 .display_none{
     display: none;
 }
 
-.modal-body{
-    position: fixed;
-    width: 80vh;
-    height: 80vh;
-    top: 50vh;
-    left: 50vw;
+.display_flex{
+    display: flex;
+}
 
-    margin-left: -40vw;
-    margin-top: -40vh;
+.modal-body{
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+    position: fixed;
+}
+
+
+
+.modal-body-left-block, .modal-body-right-block{
+    width: 50%;
+    height: 100%;
+}
+
+.modal-body-avatar{
+    width: 60%;
+    height: 60%;
+    right: 5%;
+    top: 20%;
+
     background: url('../images/background3.jpg') center no-repeat;
     background-size: cover;
     border-radius: 50%;
 }
 
+.modal-body-description{
+    width: 60%;
+    height: 60%;
+    left: 5%;
+    top: 20%;
+
+    background-color: rgba(0, 70, 200, 0.8);
+    border-radius: 20%;
+}
+
+.modal-close{
+    width: 5vh;
+    height: 5vh;
+    position: fixed;
+    right: 10%;
+    top: 15%;
+    cursor: pointer;
+}
+
+.first_line_close, .second_line_close{
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 10, 10, 0.7);
+    border-radius: 20%;
+}
+
+.first_line_close{
+    transform: rotate(120deg);
+}
+
+.second_line_close{
+    transform: rotate(240deg);
+}
