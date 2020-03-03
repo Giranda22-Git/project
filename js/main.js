@@ -13,4 +13,10 @@ window.onload = function(){
             modal_close.classList.remove('display_none');
         })
     }
+
+    modal_close.addEventListener('click', function(){
+        modal_close.classList.add('display_none');
+        modal.classList.remove('display_flex');
+        modal.classList.add('display_none');
+    })
 }
