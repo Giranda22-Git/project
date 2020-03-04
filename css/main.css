@@ -133,8 +133,6 @@ header{
     position: fixed;
 }
 
-
-
 .modal-body-left-block, .modal-body-right-block{
     width: 50%;
     height: 100%;
@@ -184,3 +182,59 @@ header{
 .second_line_close{
     transform: rotate(240deg);
 }
+
+.relative_front_sec1{
+    height: 100%;
+    width: 100%;
+}
+
+.absolute_front_sec1{
+    height: 96.5%;
+    width: 5%;
+    background-color:  rgba(238, 238, 0, 0.6);
+    right: -8.5%;
+    top: -5%;
+    font-size: 1.3em;
+    line-height: 1.55em;
+    writing-mode: tb;
+    text-align: left;
+    padding-top: 10%;
+}
+
+.arrays-left-and-right{
+    width: 30%;
+    height: 30px;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -15%;
+    display: flex;
+}
+
+.left-array, .right-array{
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 20%;
+}
+
+.left-array{
+    float: left;
+    text-align: left;
+}
+
+.right-array{
+    float: right;
+    text-align: right;
+}
+
+.pages{
+    width: 60%;
+    line-height: 30px;
+    text-align: center;
+    display: flex;
+}
+
+.block-items-pages{
+    width: 50%;
+    margin: 0 auto;
+}
+
