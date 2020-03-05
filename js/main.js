@@ -6,11 +6,13 @@ window.onload = function(){
         modal_close = document.querySelector('#modal-close'),
         right_array = document.querySelector('.right-array > span'),
         left_array = document.querySelector('.left-array > span'),
+        avatar = document.querySelector('#modal-avatar'),
+        description = document.querySelector('#modal-description'),
         page_index = 1,
         max_pages = 0,
         loaded = 0,
-        max_loaded_page = 1,
-        time_machine = 0
+        oneChange = 0,
+        ArrayLoad = []
     ;
     
     loadData(page_index, 'default');
@@ -36,10 +38,28 @@ window.onload = function(){
             list = rawData.results,
             info = rawData.info
         ;
-        console.log(page_index + "      " + max_loaded_page + "        " + time_machine);
+        console.log(list);
 
-        if(loaded <= info.count && road != 'left' && page_index == max_loaded_page && page_index > time_machine)
-            loaded += list.length;
+        if(oneChange < 1)
+        {
+            for(let i = 1; i <= info.pages; i++){
+                ArrayLoad[i] = i;
+            }
+            oneChange++;
+        }
+
+
+        if(inArray(page_index, ArrayLoad) + 1){
+            if(loaded <= info.count && road != 'left')
+            {
+                loaded += list.length;
+                delete ArrayLoad[inArray(page_index, ArrayLoad)];
+                console.log(ArrayLoad);
+            }
+        }
+
+
+        
         max_pages = info.pages;
 
         document.querySelector('.allCurrent').textContent = info.count;
@@ -61,13 +81,33 @@ window.onload = function(){
 
         for (let i = 0; i < actionList.length; i++) {
             actionList[i].addEventListener('click', function(){
+                avatar.style.cssText = `
+                    background: url('${list[i].image}') center no-repeat;
+                    background-size: cover;
+                `
+                description.innerHTML = `
+                    <li>Name: ${list[i].name}</li>
+                    <li>Status: ${list[i].status}</li>
+                    <li>Species: ${list[i].species}</li>
+                    <li>Gender: ${list[i].gender}</li>
+
+                `
+                
+
                 modal.classList.remove('display_none');
                 modal.classList.add('display_flex');
                 modal_close.classList.remove('display_none');
             })
         }
 
-        time_machine = page_index;
+    }
+
+    function inArray(checker, array){
+        for (let i = 0; i < array.length; i++)
+        {
+            if(array[i] == checker)
+                return i;
+        }
     }
 
     function clearList(){
@@ -80,8 +120,6 @@ window.onload = function(){
     right_array.addEventListener('click', function(){
         if(page_index + 1 <= max_pages)
         {
-            if(page_index == max_loaded_page)
-                max_loaded_page++;
             page_index++;
             loadData(page_index, 'right');
             
