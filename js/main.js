@@ -86,12 +86,13 @@ window.onload = function(){
                     background-size: cover;
                 `
                 description.innerHTML = `
-                    <li>Name: ${list[i].name}</li>
-                    <li>Status: ${list[i].status}</li>
-                    <li>Species: ${list[i].species}</li>
-                    <li>Gender: ${list[i].gender}</li>
+                    <li class="description">Name: ${list[i].name}</li>
+                    <li class="description">Status: ${list[i].status}</li>
+                    <li class="description">Species: ${list[i].species}</li>
+                    <li class="description">Gender: ${list[i].gender}</li>
 
                 `
+                
                 
 
                 modal.classList.remove('display_none');

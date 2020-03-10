@@ -152,10 +152,11 @@ header{
 }
 
 .modal-body-description{
-    width: 50vh;
-    height: 50vh;
+    width: 30vh;
+    height: 30vh;
     left: 5%;
     top: 25%;
+    padding: 10%;
 
     background-color: rgba(0, 70, 200, 0.8);
     border-radius: 20%;
@@ -240,3 +241,8 @@ header{
     margin: 0 auto;
 }
 
+.description{
+    font-size: 3vh;
+    color: #fff;
+    list-style-type: none;
+}
